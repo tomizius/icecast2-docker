@@ -38,19 +38,19 @@ Edit the Dockerfile and the start.sh
 
 ### docker-compose
 	
-version: '3.1'
+	version: '3.1'
 
-services:
-  icecast:
-    container_name: icecast
-    image: ice
-    environment:
-     - ICE_SOURCE_PASS=mypass
-     - ICE_RELAY_PASS=mypass
-     - ICE_ADMIN_PASS=mypass
-     - ICE_PORT=8888
-     - HOSTNAME=your.domain.local
-     - ICE_MAX_CLIENTS=1010
-    restart: unless-stopped
-    ports:
-     - 8888:8888
+	services:
+  	icecast:
+    	container_name: icecast
+    	image: ice
+    	environment:
+     	- ICE_SOURCE_PASS=mypass
+     	- ICE_RELAY_PASS=mypass
+     	- ICE_ADMIN_PASS=mypass
+     	- ICE_PORT=8888
+     	- HOSTNAME=your.domain.local
+     	- ICE_MAX_CLIENTS=1010
+    	restart: unless-stopped
+    	ports:
+     	- 8888:8888

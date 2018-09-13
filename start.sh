@@ -4,20 +4,28 @@ env
 
 set -x
 
-if [ -n "$ICECAST_SOURCE_PASSWORD" ]; then
-    sed -i "s/<source-password>[^<]*<\/source-password>/<source-password>$ICECAST_SOURCE_PASSWORD<\/source-password>/g" /etc/icecast2/icecast.xml
+if [ -n "$ICE_SOURCE_PASS" ]; then
+    sed -i "s/<source-password>[^<]*<\/source-password>/<source-password>$ICE_SOURCE_PASS<\/source-password>/g" /etc/icecast2/icecast.xml
 fi
 
-if [ -n "$ICECAST_RELAY_PASSWORD" ]; then
-    sed -i "s/<relay-password>[^<]*<\/relay-password>/<relay-password>$ICECAST_RELAY_PASSWORD<\/relay-password>/g" /etc/icecast2/icecast.xml
+if [ -n "$ICE_RELAY_PASS" ]; then
+    sed -i "s/<relay-password>[^<]*<\/relay-password>/<relay-password>$ICE_RELAY_PASS<\/relay-password>/g" /etc/icecast2/icecast.xml
 fi
 
-if [ -n "$ICECAST_ADMIN_PASSWORD" ]; then
-    sed -i "s/<admin-password>[^<]*<\/admin-password>/<admin-password>$ICECAST_ADMIN_PASSWORD<\/admin-password>/g" /etc/icecast2/icecast.xml
+if [ -n "$ICE_ADMIN_PASS" ]; then
+    sed -i "s/<admin-password>[^<]*<\/admin-password>/<admin-password>$ICE_ADMIN_PASS<\/admin-password>/g" /etc/icecast2/icecast.xml
 fi
 
-if [ -n "$ICECAST_PASSWORD" ]; then
-    sed -i "s/<password>[^<]*<\/password>/<password>$ICECAST_PASSWORD<\/password>/g" /etc/icecast2/icecast.xml
+if [ -n "$ICE_PORT" ]; then
+    sed -i "s/<port>[^<]*<\/port>/<port>$ICE_PORT<\/port>/g" /etc/icecast2/icecast.xml
+fi
+
+if [ -n "$HOSTNAME" ]; then
+    sed -i "s/<hostname>[^<]*<\/hostname>/<hostname>$HOSTNAME<\/hostname>/g" /etc/icecast2/icecast.xml
+fi
+
+if [ -n "$ICE_MAX_CLIENTS" ]; then
+    sed -i "s/<clients>[^<]*<\/clients>/<clients>$ICE_MAX_CLIENTS<\/clients>/g" /etc/icecast2/icecast.xml
 fi
 
 set -e

@@ -43,7 +43,7 @@ Edit the Dockerfile and the start.sh
 	services:
   	icecast:
     	container_name: icecast
-    	image: ice
+    	image: tomizius/icecast
     	environment:
      	- ICE_SOURCE_PASS=mypass
      	- ICE_RELAY_PASS=mypass
